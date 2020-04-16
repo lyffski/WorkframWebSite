@@ -9,5 +9,15 @@
                 'password' => $enc_password,
 			);
 			return $this->db->insert('users', $data);
-		}
+        }
+        public function login($nickname, $password){
+            $this->db->where('nickname', $nickname);
+            $this->db->where('password', $password);
+            return $this->db->get('users');
+            if($result->num_rows() == 1){
+				return $result->row(0)->id;
+			} else {
+				return false;
+			}
+        }
 	}

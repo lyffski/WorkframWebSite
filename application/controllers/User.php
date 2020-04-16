@@ -26,7 +26,7 @@ class User extends CI_Controller{
         
         if($this->form_validation->run() === FALSE){
             $this->load->view("templates/header");
-            $this->load->view("user/login");
+            $this->load->view("user/login", $data);
             $this->load->view("templates/footer");
         }else{
             $this->user_model->login();
