@@ -1,16 +1,42 @@
 <?php
-class User_model extends CI_model{
-    public function login(){
-        $this->form_validation->set_rules('fname' 'Forename' 'require');
-        $this->form_validation->set_rules('lname' 'Lastname' 'require');
-        $this->form_validation->set_rules('email' 'Email' 'require');
-        $this->form_validation->set_rules('password' 'Password' 'require');
-        $this->form_validation->set_rules('password2' 'Password2' 'matches[password]');
-    
-        if($this->form_validation->run() === FALSE){
-                $this->load->view
-        }else{
+	class User_model extends CI_Model{
+		public function register($enc_password){
+			$data = array(
+				'name' => $this->input->post('name'),
+				'email' => $this->input->post('email'),
+                'username' => $this->input->post('username'),
+                'password' => $enc_password,
+                'zipcode' => $this->input->post('zipcode')
+			);
+			return $this->db->insert('users', $data);
+		}
 
-        }
-    } 
-}
+		public function login($username, $password){
+			$this->db->where('username', $username);
+			$this->db->where('password', $password);
+			$result = $this->db->get('users');
+			if($result->num_rows() == 1){
+				return $result->row(0)->id;
+			} else {
+				return false;
+			}
+		}
+
+		// public function check_username_exists($username){
+		// 	$query = $this->db->get_where('users', array('username' => $username));
+		// 	if(empty($query->row_array())){
+		// 		return true;
+		// 	} else {
+		// 		return false;
+		// 	}
+		// }
+
+		// public function check_email_exists($email){
+		// 	$query = $this->db->get_where('users', array('email' => $email));
+		// 	if(empty($query->row_array())){
+		// 		return true;
+		// 	} else {
+		// 		return false;
+		// 	}
+		// }
+	}

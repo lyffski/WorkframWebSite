@@ -12,8 +12,8 @@
             <?php if(1==1):?>
             <a class="navbar-brand" style="color:00FFAE; margin-left:auto" href="<?php echo base_url();?>addPost">Create a Post</a>
             <?php endif?>
-            <a class="navbar-brand" style="color:00FFAE; margin-left:auto" href="<?php echo base_url();?>login">Login</a>
-            <a class="navbar-brand" style="color:00FFAE; margin-left:" href="<?php echo base_url();?>register">Register<a>
+            <a class="navbar-brand" style="color:00FFAE; margin-left:auto" href="<?php echo base_url();?>register">Register</a>
+            <a class="navbar-brand" style="color:00FFAE; margin-left:" href="<?php echo base_url();?>login">Login<a>
         </div>
     </div>
 <div class="container">

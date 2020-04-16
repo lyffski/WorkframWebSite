@@ -17,13 +17,4 @@ class Posts extends CI_Controller{
         $this->load->view('posts/view', $data);
         $this->load->view('templates/footer');
     }
-    public function add_post(){
-
-    }
-    // public function delete_post(){
-
-    // }
-    // public function edit_post(){
-
-    // }
 }
