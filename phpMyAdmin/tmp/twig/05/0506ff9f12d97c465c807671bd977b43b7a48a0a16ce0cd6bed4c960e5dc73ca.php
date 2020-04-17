@@ -11,8 +11,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* secondary_tabs.twig */
-class __TwigTemplate_1203f56bc0d34c7a4f066f67c06311fea86e4835182074b541df1a213244cc4a extends \Twig\Template
+/* display/results/empty_display.twig */
+class __TwigTemplate_8277e121081b9101e83ebe0083b7b0a7520ae2cb94e4e25bef8ce4fd6574615f extends \Twig\Template
 {
     public function __construct(Environment $env)
     {
@@ -27,30 +27,17 @@ class __TwigTemplate_1203f56bc0d34c7a4f066f67c06311fea86e4835182074b541df1a21324
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<ul id=\"topmenu2\">
-    ";
-        // line 2
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["sub_tabs"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["tab"]) {
-            // line 3
-            echo "        ";
-            echo PhpMyAdmin\Util::getHtmlTab($context["tab"], ($context["url_params"] ?? null));
-            echo "
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tab'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 5
-        echo "</ul>
-<div class=\"clearfloat\"></div>
+        echo "<td ";
+        echo twig_escape_filter($this->env, ($context["align"] ?? null), "html", null, true);
+        echo " class=\"";
+        echo twig_escape_filter($this->env, ($context["classes"] ?? null), "html", null, true);
+        echo "\"></td>
 ";
     }
 
     public function getTemplateName()
     {
-        return "secondary_tabs.twig";
+        return "display/results/empty_display.twig";
     }
 
     public function isTraitable()
@@ -60,7 +47,7 @@ class __TwigTemplate_1203f56bc0d34c7a4f066f67c06311fea86e4835182074b541df1a21324
 
     public function getDebugInfo()
     {
-        return array (  46 => 5,  37 => 3,  33 => 2,  30 => 1,);
+        return array (  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -73,6 +60,6 @@ class __TwigTemplate_1203f56bc0d34c7a4f066f67c06311fea86e4835182074b541df1a21324
 
     public function getSourceContext()
     {
-        return new Source("", "secondary_tabs.twig", "C:\\xampp\\htdocs\\cix\\phpMyAdmin\\templates\\secondary_tabs.twig");
+        return new Source("", "display/results/empty_display.twig", "C:\\xampp\\htdocs\\cix\\phpMyAdmin\\templates\\display\\results\\empty_display.twig");
     }
 }
