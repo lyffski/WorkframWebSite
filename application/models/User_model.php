@@ -27,33 +27,43 @@
 				return FALSE;
 			}
 		}
-		//login		
-		public function login($username, $password){
-			$query = $this->db->get_where('users', array("username" => $username));
-			if(empty($query->row_array())){
-				return FALSE;
-			}else{
+		
+		// public function login($username, $password){
+		// 	// Validate
+		// 	$this->db->where('username', $username);
+		// 	$this->db->where('password', $password);
+	
+		// 	$result = $this->db->get('users');
+	
+		// 	if($result->num_rows() == 1){
+		// 		return $result->row(0)->id;
+		// 	} else {
+		// 		return false;
+		// 	}
+		// }
+		login		
+		public function login($username1, $password1){
+			$query = $this->db->get_where('users', array("username" => $username1));
+			$query2 = $this->db->get_where('users', array("password" => $password1));
+			if(empty($query->row_array()) &&  empty($query->row_array())){
 				return TRUE;
-			}
-			$query2 = $this->db->get_where('users', array("password" => $password));
-			if(empty($query2->row_array())){
-				return FALSE;
 			}else{
-				return TRUE;
+				return FALSE;
 			}
-		}
-		public function logi($username, $password){
-			$this->db->where('username', $username);
-			$this->db->where('password', $password);
+			
+		// }
+		// public function login($username, $password){
+		// 	$this->db->where('username', $username);
+		// 	$this->db->where('password', $password);
 
-			$result = $this->db->get('users');
+		// 	$result = $this->db->get('users');
 
-			if($result->num_rows() == 1){
-				return $result->row(0)->id;
-			} else {
-				return false;
-			}
-		}
+		// 	if($result->num_rows() == 1){
+		// 		return $result->row(0)->id;
+		// 	} else {
+		// 		return false;
+		// 	}
+		// }
 	}
 
 

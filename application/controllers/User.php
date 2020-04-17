@@ -32,26 +32,55 @@ class User extends CI_Controller{
             return TRUE;
         }else{return FALSE;}
     }
-    
 
-    public function login(){
+
+
+    
+    // public function login(){
+    // if($this->input->post('loginSubmit')){ 
+    //     $this->form_validation->set_rules('username', 'Username', 'required'); 
+    //     $this->form_validation->set_rules('password', 'password', 'required'); 
+         
+    //     if($this->form_validation->run() == true){ 
+    //         $con = array( 
+    //             'returnType' => 'single', 
+    //             'conditions' => array( 
+    //                 'email'=> $this->input->post('username'), 
+    //                 'password' => md5($this->input->post('password')), 
+    //                 'status' => 1 
+    //             ) 
+    //         ); 
+    //         $checkLogin = $this->user->getRows($con); 
+    //         if($checkLogin){ 
+    //             $this->session->set_userdata('isUserLoggedIn', TRUE); 
+    //             $this->session->set_userdata('userId', $checkLogin['id']); 
+    //             redirect('home'); 
+    //         }else{ 
+    //             $data['error_msg'] = 'Wrong email or password, please try again.'; 
+    //         } 
+    //     }else{ 
+    //         $data['error_msg'] = 'Please fill all the mandatory fields.'; 
+    //     } 
+    // }
+
+    public function log(){
         $data['title'] = 'Login';
-        $this->form_validation->set_rules('username', 'Username',   'required');
-        $this->form_validation->set_rules('username', 'Username',   'required');
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
 
         if($this->form_validation->run()===FALSE){
         $this->load->view("templates/header");
         $this->load->view("user/login", $data);
         $this->load->view("templates/footer");  
         }else{
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-            $user_id = $this->user_model->login($username, $password);
+            $username1 = $this->input->post('username');
+            $password1 = md5($this->input->post('password'));
+            $user_id = $this->user_model->login($username1, $password1);
 
             if($user_id){
                 $user_data = array(
                     'user_id' => $user_id,
-                    'username' => $username,
+                    'username' => $username1,
                     'logged_in' => true
                 );
                 $this->session->set_userdata($user_data);
