@@ -14,7 +14,7 @@
         <input type="password" placeholder="Entry your Password" name="password"><br><br>
     </div>
 
-    <button type="submit" class="btn btn-outline-success ">Submit</button>
+    <button type="submit" class="btn btn-outline-success" >Submit</button>
 
 </div>
 
