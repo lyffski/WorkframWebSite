@@ -5,14 +5,14 @@
 <div class="form-group">
             <div class="form-group">
             <label>Username</label>
-                <input type="text" class="form-control" name="nickname" placeholder="Username">
+                <input type="text" class="form-control" name="username" placeholder="Username">
             </div>
 			<label>Name</label>
 				<input type="text" class="form-control" name="fname" placeholder="Name">
 			</div>
 			<div class="form-group">
-			<label>surname</label>
-				<input type="text" class="form-control" name="lname" placeholder="Zipcode">
+			<label>Lastname</label>
+				<input type="text" class="form-control" name="lname" placeholder="Lastname">
 			</div>
 			<div class="form-group">
 			<label>Email</label>
@@ -26,10 +26,9 @@
 			<label>Confirm Password</label>
 				<input type="password" class="form-control" name="password2" placeholder="Confirm Password">
 			</div>
-			<button type="submit" class="btn btn-primary btn-block">Submit</button>
+			<button type="submit" class="btn btn-outline-success form-control">Submit</button>
 		</div>
     <br>
-    <button type="submit" class="btn btn-outline-success form-control">Submit</button>
     
 <?php echo form_close();?>
 </div>
